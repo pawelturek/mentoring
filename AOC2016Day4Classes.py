@@ -1,6 +1,6 @@
 import string
 
-
+#todo
 class EncryptedData:
 
 
