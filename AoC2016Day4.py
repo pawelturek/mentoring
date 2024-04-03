@@ -7,6 +7,13 @@ def open_file(file_txt: str):
             return [line.strip() for line in f.readlines()]
 
 
+def count_letters3(code: str):
+    word_list = []
+    one_word: int = code.find('-')
+    word_list.append(code[0:one_word])
+
+
+
 def count_letters2(code: str):
     word_list = []
     one_word: int = code.find('-')
@@ -22,7 +29,8 @@ def count_letters2(code: str):
             break
         word_list.append(code[one_word + 1:second_word])
         one_word = second_word
-    return word_list, sector_id, checksum
+    #return word_list, sector_id, checksum
+    return word_list
 
 
 def number_of_occurrences(word_list: list):
@@ -65,12 +73,42 @@ for line in range(0,len(open_file("test.txt"))):
     total_sum += is_room_real(calculate_checksum(occurrences_sort(number_of_occurrences(count_letters2(open_file("test.txt")[line])[0]))), count_letters2(open_file("test.txt")[line])[2], count_letters2(open_file("test.txt")[line])[1])
 print('suma sector id', total_sum)
 
-# print('count_letters2: ',count_letters2(open_file("test.txt")[0])[0]) #numer liniijki w pliku, 0 - word list, 1 - sector, 2 checksum, nr slowa
-# print('number_of_occurrences: ',number_of_occurrences(count_letters2(open_file("test.txt")[0])[0][0]))
-# print('aaaaaaaaaa')
+
+def test(word_list: list):
+    occurrences_dict = dict()
+    occurrences_dict = {q: 0 for q in string.ascii_lowercase[:26]}
+    #print(occurrences_dict)
+    #for w in word_list:
+        #print('czek: ',w)
+    occurrences_dict = {i: occurrences_dict[i]+ 1 for i in word_list}
+    return occurrences_dict
+
+#print('ssssssssssss',open_file("test.txt")[0][0][0])
+
+#print('count_letters2!!: ',count_letters2(open_file("test.txt")[0])[0]) #numer liniijki w pliku, wybór jaki item pobieramy 0 - word list, 1 - sector, 2 checksum, nr slowa
+#rint(count_letters2(open_file("test.txt")[3])[0][0])
+print(open_file("test.txt")[0])
+txt = open_file("test.txt")[0]
+print(txt.split('-'))
+txt1 = txt.split('-')
+print('txt1[0:5]:  ',txt1[0:5])
+print('test: ',[element for element in txt1 if element[0].isdigit()])
+last_word = [element for element in txt1 if element[0].isdigit()]
+print('last word: ', last_word[0])
+sector_id = last_word[0].split("[")
+print('sector_id: ', sector_id[0])
+checksum_calculated = sector_id[1].replace(']','')
+print('this is checksum: ',checksum_calculated)
+print('test:  ',count_letters2(open_file("test.txt")[3])[0][0])
+print('vv:  ',(open_file("test.txt")[3]))
+#print('sector',sector_id[0])
+#print('checksum: ', sector_id[1])
+
+#print('number_of_occurrences: ',number_of_occurrences(count_letters2(open_file("test.txt")[0])[0][0]))
+#print('test: ',test(count_letters2(open_file("test.txt")[3])[0][0]))
 # print(occurrences_sort(number_of_occurrences(count_letters2(open_file("test.txt")[0])[0])))
 # print('number_of_occurrences: ',number_of_occurrences(count_letters2(open_file("test.txt")[0])[0]))
 # print('sorted: ',occurrences_sort(number_of_occurrences(count_letters2(open_file("test.txt")[0])[0])))
 # print(calculate_checksum(occurrences_sort(number_of_occurrences(count_letters2(open_file("test.txt")[0])[0]))))
 
-#print('czek: ',count_letters2(open_file("test.txt")[0])[1])
+print('czek: ',count_letters2(open_file("test.txt")[0])[1])
