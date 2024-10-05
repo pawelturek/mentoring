@@ -7,7 +7,7 @@ class EncryptedData:
     def __init__(self, file_txt: str):
         self.lines_object_list = []
         self.file_txt = file_txt
-        self.local_dir = r'C:\Users\turekp\Desktop\mentoring\mentoring'
+        self.local_dir = r'/'
         self.file_path = os.path.join(self.local_dir, self.file_txt)
         print(self.file_path)
 

@@ -57,7 +57,7 @@ def AddEmployee(filePath:str, filePathtoSave:str):
 
 
 
-print(GetNamesSalariesFromJson('Jsontest 1.json'))
-print(ShowEmployeesStatus('Jsontest 1.json', "False"))
-print(AvgEmployeesAge('Jsontest 1.json'))
-AddEmployee('Jsontest 1.json','Jsontest 2.json')
+print(GetNamesSalariesFromJson('../klasy/Jsontest 1.json'))
+print(ShowEmployeesStatus('../klasy/Jsontest 1.json', "False"))
+print(AvgEmployeesAge('../klasy/Jsontest 1.json'))
+AddEmployee('../klasy/Jsontest 1.json', 'Jsontest 2.json')

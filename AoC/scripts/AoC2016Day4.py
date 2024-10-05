@@ -68,9 +68,13 @@ def is_room_real(checksum_calculated: str, current_checksum: str, sector_id: int
 
 
 total_sum = 0
-for line in range(0,len(open_file("test.txt"))):
-    print('Is room real: ', is_room_real(calculate_checksum(occurrences_sort(number_of_occurrences(count_letters2(open_file("test.txt")[line])[0]))), count_letters2(open_file("test.txt")[line])[2], count_letters2(open_file("test.txt")[line])[1]))
-    total_sum += is_room_real(calculate_checksum(occurrences_sort(number_of_occurrences(count_letters2(open_file("test.txt")[line])[0]))), count_letters2(open_file("test.txt")[line])[2], count_letters2(open_file("test.txt")[line])[1])
+for line in range(0, len(open_file("test.txt"))):
+    print('Is room real: ', is_room_real(calculate_checksum(occurrences_sort(number_of_occurrences(count_letters2(open_file(
+        "test.txt")[line])[0]))), count_letters2(open_file("test.txt")[line])[2], count_letters2(open_file(
+        "test.txt")[line])[1]))
+    total_sum += is_room_real(calculate_checksum(occurrences_sort(number_of_occurrences(count_letters2(open_file(
+        "test.txt")[line])[0]))), count_letters2(open_file("test.txt")[line])[2], count_letters2(open_file(
+        "test.txt")[line])[1])
 print('suma sector id', total_sum)
 
 
@@ -99,8 +103,8 @@ sector_id = last_word[0].split("[")
 print('sector_id: ', sector_id[0])
 checksum_calculated = sector_id[1].replace(']','')
 print('this is checksum: ',checksum_calculated)
-print('test:  ',count_letters2(open_file("test.txt")[3])[0][0])
-print('vv:  ',(open_file("test.txt")[3]))
+print('test:  ', count_letters2(open_file("test.txt")[3])[0][0])
+print('vv:  ', (open_file("test.txt")[3]))
 #print('sector',sector_id[0])
 #print('checksum: ', sector_id[1])
 
@@ -111,4 +115,4 @@ print('vv:  ',(open_file("test.txt")[3]))
 # print('sorted: ',occurrences_sort(number_of_occurrences(count_letters2(open_file("test.txt")[0])[0])))
 # print(calculate_checksum(occurrences_sort(number_of_occurrences(count_letters2(open_file("test.txt")[0])[0]))))
 
-print('czek: ',count_letters2(open_file("test.txt")[0])[1])
+print('czek: ', count_letters2(open_file("test.txt")[0])[1])
