@@ -13,7 +13,7 @@ def log_user(driver):
     submit_button.click()
     time.sleep(5)
 
-
+#gitcheck
 if __name__ == "__main__":
     driver = webdriver.Chrome()
     driver.get(config("HOST"))
